@@ -1,0 +1,30 @@
+ <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>title</title>
+  </head>
+  <body>
+  <h2 style="font-family: fantasy; font-size: 20; font-weight: 300;"> How are you doing right now?</p>
+  <button id="happyButton" style="padding: 5em 5em; border-radius: 12px; background-color: pink; color: black; width: 300px; font-size: 16px;">Happyyy</button>
+  <button id="sadButton" style="padding: 5em 5em; border-radius: 12px; background-color: lightskyblue; color: black; width: 300px; font-size: 16px;">Have been better</button>
+  <p id="answer"><p>
+  <script>
+  let happyButtonEl = document.getElementById("happyButton");
+  let sadButtonEl = document.getElementById("sadButton");
+  let answerEl = document.getElementById("answer");
+  function happyButtonClick(event){
+      answerEl.textContent = "How fantastic!"
+  }
+  function sadButtonClick(event){
+      answerEl.textContent = "Sorry to hear that!"
+  }
+  happyButtonEl.addEventListener("click", happyButtonClick)
+  sadButtonEl.addEventListener("click", sadButtonClick)
+  alert("I will ask you again tomorrow!")
+  
+</script>
+
+  </body>
+</html>
