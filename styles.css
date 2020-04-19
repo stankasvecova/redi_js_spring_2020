@@ -1,0 +1,55 @@
+header {
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height:8px;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  padding: 2em 20vw;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.card {
+  border: 2px dotted #404040;
+  padding: 1em;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+body {
+    background-color: orangered;
+    color: white
+}
+nav {
+    background-color: whitesmoke;
+    color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+a.active {
+  background-color: orangered;
+  color: black;
+  font-weight: bold;
+}
+a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+li {
+  float: left;
+  color: black;
+  font-weight: bold;
+}
+img {
+  width:400px;
+  height:300px;
+}
