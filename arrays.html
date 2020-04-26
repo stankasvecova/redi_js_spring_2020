@@ -15,8 +15,8 @@
 <script>
     let articles = [];
     const firstAEl = document.getElementById('firstA');
-    const lastAEl = document.getElementByID('lastA');
-    const ulEl = document.getElementByID('articlesList')
+    const lastAEl = document.getElementById('lastA');
+    const ulEl = document.getElementById('articlesList')
 
     function handleNewArticle (article) {
         articles.push(article)
@@ -31,10 +31,8 @@
         firstAEl.textContent = firstA.displaytitle
         lastAEl.textContent = lastA.displaytitle
     };
-
 window.onRandomWikipediaArticle(handleNewArticle);
-
-    </script>
+</script>
 </body>
 
 </html>
