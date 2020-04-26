@@ -10,7 +10,7 @@
 <script src="https://travisshears.com/apps/random-wiki/0.0.4--alpha3/src.7b19814e.js"></script>
 <h2 id="firstA" style=color:blue>The first article</h2>
 <h2 id="lastA" style=color:red>The last article</h2>
-<ul id="articlesList"><li></li></ul>
+<ul id="articlesList"></ul>
 
 <script>
     let articles = [];
@@ -18,7 +18,7 @@
     const lastAEl = document.getElementByID('lastA');
     const ulEl = document.getElementByID('articlesList')
 
-    function handleNewArticle (articles) {
+    function handleNewArticle (article) {
         articles.push(article)
         let firstA = articles[0];
         let lastA = articles[articles.length - 1];
