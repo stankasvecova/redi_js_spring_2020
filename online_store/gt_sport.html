@@ -1,0 +1,119 @@
+  <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="gt_sport.css">
+    <title>goodTeens sports online store</title>
+  </head>
+  <body>
+<h2 class="sportTitle1">goodTeens - Sports</h2> <p>
+<h2 class="sportTitle2">Online Store</h2>
+<p class="a"></p>
+
+<div class="sportWrapper">
+  <div class="card" id="product"> 
+    <div id="productDescription"></div>
+    <div id="productImg"></div>
+  </div>
+</div>
+
+
+<script>
+const sportProducts = [
+  {
+    imgSrc: "skateboard.jpg",
+    name: "Skateboard",
+    brand: "Hudora",
+    level: "beginner",
+    price: 50,
+    seller: "Hudora",
+    other: {
+      helmetNeeded: true,
+      longevity: "mid-term",
+      teamSpirit: false,
+    }
+  },
+  {
+    imgSrc: "standuppaddle.jpg",
+    name: "Stand-up paddle",
+    brand: "Oceana",
+    level: "advanced",
+    price: 300,
+    seller: "Oceana",
+    other: {
+      helmetNeeded: false,
+      longevity: "long-term",
+      teamSpirit: true,
+    }
+  },
+  {
+    imgSrc: "volleyball.jpg",
+    name: "Volleyball ball",
+    brand: "Mikasa",
+    level: "beginner",
+    price: 26,
+    seller: "Mikasa",
+    other: {
+      helmetNeeded: false,
+      longevity: "short-term",
+      teamSpirit: true,
+    }
+    },
+  {
+    imgSrc: "xbadmintonset.jpg",
+    name: "Badminton set",
+    brand: "Talbot Torro",
+    level: "intermediate",
+    price: 28,
+    seller: "Talbot Torro",
+    other: {
+      helmetNeeded: false,
+      longevity: "mid-term",
+      teamSpirit: true,
+    }
+    },
+  {
+    imgSrc: "skigoggles.jpg",
+    name: "Ski Goggles",
+    brand: "Lemego",
+    level: "intermediate",
+    price: 28,
+    seller: "Lemego",
+    other: {
+      helmetNeeded: true,
+      longevity: "mid-term",
+      teamSpirit: true,
+    }
+    },
+];
+
+function productDescriptionDisplay()
+for (let i=0; i < sportProducts.length; i++) {
+  descriptions = document.createElement("div");
+  const productDescription = document.getElementById("productDescription")
+  productDescription.innerHTML = `
+      <p> <b>${sportProducts[i].name}</b></p>
+      <p> <b>Brand:</b> ${sportProducts[i].brand}</p>
+      <p> <b>Price:</b> ${sportProducts[i].price} Eur</p>
+      <p> Sold by a <b>gT partner</b> called ${sportProducts[i].seller}.</p>
+      <p> This ${sportProducts[i].name} is suitable for teenagers on ${sportProducts[i].level} level.
+ `;
+ productDescription.appendChild(descriptions);
+ }
+
+function productImgDisplay()
+for (let i=0; i < sportProducts.length; i++) {
+  productImages = document.createElement("div")
+  const productImg = document.getElementById("productImg")
+  productImg.innerHTML = `
+    <p> <img src='${sportProducts[i].imgSrc}' style="width:50px"><p>
+ `;
+ productImg.appendChild(productImages);
+ };
+
+ productDescriptionDisplay();
+ productImgDisplay();
+
+</script>
+  </body>
+</html>
