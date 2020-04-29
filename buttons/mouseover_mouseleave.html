@@ -1,0 +1,37 @@
+ <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="./mouseover_mouseleave.css">
+    <title> mouseOver & mouseLeave </title>
+  </head>
+  <body>
+    <div class="buttonBlock">
+        <button type="button" id="helloBtn">Hello Button</button>
+    </div>
+    <script>
+    let helloBtnEl = document.getElementById("helloBtn")
+    const initialLabel = "Hello Button"
+
+    function clickHandler(event){
+        console.log("Hey, you just clicked me!");
+    }
+    function mouseOverHandler(event){
+        console.log("You just hovered over me!");
+        helloBtnEl.innerText = "I've changed!";
+        helloBtnEl.classList.add("inverted-colour");
+        helloBtnEl.classList.add("big-button");
+    }
+    function mouseLeaveHandler(event){
+        console.log("You just left me!");
+        helloBtnEl.innerText= initialLabel;
+        helloBtnEl.classList.remove("inverted-colour");
+        helloBtnEl.classList.remove("big-button");
+    }
+    helloBtnEl.addEventListener("click", clickHandler)
+    helloBtnEl.addEventListener("mouseover", mouseOverHandler)
+    helloBtnEl.addEventListener("mouseleave", mouseLeaveHandler)
+
+</script>
+  </body>
+</html>
