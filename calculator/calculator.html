@@ -1,0 +1,40 @@
+ <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>title</title>
+  </head>
+  <body>
+  <h1>Calculator</h1>
+  <ul id = "list">
+      <li>5</li>
+
+  </ul>
+  <h1>Input a number</h1>
+  <legend>Add your number</legend>
+  <p>
+  <input type = "number" id = "inputNum" value = "number"/>
+  <button id="addBtn" type="button">Add</button>
+  <h1>Total sum</h1>
+  <p id = "sum">0</p>
+  <script type="text/javascript">
+      const numEl = document.getElementById("inputNum");
+      const addBtnEl = document.getElementById("addBtn");
+      const sumEl = document.getElementById("sum");
+      const listEl = document.getElementById("list");
+      let sum = 0;
+function calculate(){
+  const numEl = parseFloat(inputNum.value);
+  sum += num;
+  sumEl.textContent = "The total sum is" + "sum";
+  const listEl = document.createElement("li");
+  listEl.textContent = num;
+  listEl.appendChild("list")
+}
+addBtnEl.addEventListener("click"; calculate);
+
+
+
+</script>
+  </body>
+</html>
