@@ -1,0 +1,120 @@
+ <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="gt_sports.css">
+    <title>goodTeens sports online store</title>
+  </head>
+  <body>
+<h2 class="column" id="h2title">goodTeens - Sports</h2> <p>
+<h2 class="column" id="h2title2">Online Store</h2>
+<br><br>
+<p class="a"></p>
+<section class="card" id="product1"> 
+</section>
+<p class="b"></p>
+<section class="card" id="product2"> 
+</section>
+<p class="b"></p>
+<section class="card" id="product3"> 
+</section>
+<p class="b"></p>
+<section class="card" id="product4"> 
+</section>
+</section>
+<p class="b"></p>
+<section class="card" id="product5"> 
+</section>
+
+<script>
+const sportProducts = [
+  {
+    imgSrc: "skateboard.jpg",
+    name: "Skateboard",
+    brand: "Hudora",
+    level: "beginner",
+    price: 50,
+    seller: "Hudora",
+  },
+  {
+    imgSrc: "standuppaddle.jpg",
+    name: "Stand-up paddle",
+    brand: "Oceana",
+    level: "advanced",
+    price: 300,
+    seller: "Oceana",
+  },
+  {
+    imgSrc: "volleyball.jpg",
+    name: "Volleyball ball",
+    brand: "Mikasa",
+    level: "beginner",
+    price: 26,
+    seller: "Mikasa",
+    },
+  {
+    imgSrc: "xbadmintonset.jpg",
+    name: "Badminton set",
+    brand: "Talbot Torro",
+    level: "intermediate",
+    price: 28,
+    seller: "Talbot Torro",
+    },
+  {
+    imgSrc: "skigoggles.jpg",
+    name: "Ski Goggles",
+    brand: "Lemego",
+    level: "intermediate",
+    price: 28,
+    seller: "Lemego",
+    }
+];
+
+const product1 = document.getElementById("product1")
+product1.innerHTML = `
+    <p> <b>${sportProducts[0].name}</b></p>
+    <p> <img src='${sportProducts[0].imgSrc}' style="width:50px"><p>
+    <p> <b>Brand:</b> ${sportProducts[0].brand}</p>
+    <p> <b>Price:</b> ${sportProducts[0].price} Eur</p>
+    <p> Sold by a <b>gT partner</b> called ${sportProducts[0].seller}.</p>
+    <p> This ${sportProducts[0].name} is suitable for teenagers on ${sportProducts[0].level} level.
+ `;
+const product2 = document.getElementById("product2")
+product2.innerHTML =`
+    <p> <b> ${sportProducts[1].name}</b></p>
+    <p> <img src='${sportProducts[1].imgSrc}' style="width:50px"><p>
+    <p> <b>Brand:</b> ${sportProducts[1].brand}</p>
+    <p> <b>Price:</b> ${sportProducts[1].price} Eur</p>
+    <p> Sold by a <b>gT partner</b> called ${sportProducts[1].seller}.</p>
+    <p> This ${sportProducts[1].name} is suitable for teenagers on ${sportProducts[1].level} level.
+`;
+const product3 = document.getElementById("product3")
+product3.innerHTML = `
+    <p> <b> ${sportProducts[2].name}</b></p>
+    <p> <img src='${sportProducts[2].imgSrc}' style="width:50px"><p>
+    <p> <b>Brand:</b> ${sportProducts[2].brand}</p>
+    <p> <b>Price:</b> ${sportProducts[2].price} Eur</p>
+    <p> Sold by a <b>gT partner</b> called ${sportProducts[2].seller}.</p>
+    <p> This ${sportProducts[2].name} is suitable for teenagers on ${sportProducts[2].level} level.
+`;
+const product4 = document.getElementById("product4")
+product4.innerHTML = `
+    <p> <b>${sportProducts[3].name}</b> </p>
+    <p> <img src='${sportProducts[3].imgSrc}' style="width:50px"><p>
+    <p> <b>Brand:</b> ${sportProducts[3].brand}</p>
+    <p> <b>Price:</b> ${sportProducts[3].price} Eur</p>
+    <p> Sold by a <b>gT partner</b> called ${sportProducts[3].seller}.</p>
+    <p> This ${sportProducts[3].name} is suitable for teenagers on ${sportProducts[3].level} level.
+`;
+const product5 = document.getElementById("product5")
+product5.innerHTML = `
+    <p> <b>${sportProducts[4].name}</b> </p>
+    <p> <img src='${sportProducts[4].imgSrc}' style="width:50px"><p>
+    <p> <b>Brand:</b> ${sportProducts[4].brand}</p>
+    <p> <b>Price:</b> ${sportProducts[4].price} Eur</p>
+    <p> Sold by a <b>gT partner</b> called ${sportProducts[4].seller}.</p>
+    <p> This ${sportProducts[4].name} is suitable for teenagers on ${sportProducts[4].level} level.
+`;
+</script>
+  </body>
+</html>

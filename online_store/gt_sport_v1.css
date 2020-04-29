@@ -1,0 +1,43 @@
+#h2title {
+    color: black;
+    background-color: yellowgreen;
+    width: 100px;
+    height: 50px;
+    margin: 1px;
+}
+
+#h2title2 {
+    color:yellowgreen;
+    background-color: black;
+    width: 100px;
+    height: 50px;
+    margin: 1px;
+}
+p.a {
+    margin: 100px 100px;
+  }
+p.b {
+    margin: 100px 100px;
+  }
+.column {
+    float: left;
+    width: 25%;
+    padding: 10px;
+    height: 300px; 
+    border-radius: 5px;
+      }
+.card {
+    border: 2px dotted #404040;
+    padding: 2em; 
+    margin: 1em;
+    border-radius: 20px;
+    box-shadow: 0 4px 16px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 250px;
+    height: 280px;
+    float: left;
+    word-wrap: break-word;
+    overflow: hidden;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
