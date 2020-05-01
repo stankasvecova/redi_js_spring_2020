@@ -22,25 +22,22 @@
 p.a {
   margin: 50px;
 };
-.sportWrapper {
+.grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
-  grid-gap: 1em;
+  grid-template-columns: 1fr 1fr 1fr 1fr; 
+  grid-gap: 5em;
 };
-
-.sportWrapper > div{
-  background-color: #eee;
+.grid > div:nth-child(odd){
+  background-color: #ddd;
   padding: 1em;
 };
-.sportWrapper > div:nth-child(odd){
-  background-color: #ddd;
+.grid > div:nth-child(even){
+  background-color: #eee;
   padding: 1em;
 };
 .card {
   border: 2px dotted #404040;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 1em;
   padding: 1em; 
   border-radius: 20px;
   box-shadow: 0 4px 16px 0 rgba(0,0,0,0.2);

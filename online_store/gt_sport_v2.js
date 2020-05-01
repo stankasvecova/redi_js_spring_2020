@@ -76,17 +76,30 @@ function productDescriptionDisplay() {
       <p> <b>Price:</b> ${sportProducts[i].price} Eur</p>
       <p> Sold by a <b>gT partner</b> called ${sportProducts[i].seller}.</p>
       <p> This ${sportProducts[i].name} is suitable for teenagers on ${sportProducts[i].level} level.
- `;
-    productDescription.appendChild(descriptions);
-    descriptions.innerHTML = productDescriptionDisplay();
-  }
+      `;
+      productDescription.appendChild(descriptions);
+  };
 };
 
 productDescriptionDisplay();
 
-const shoppingCart = [];
+let shoppingCart = [];
+const sportProductsEl = document.getElementById("sportProducts")
+function addProductsToCart() {
+  for (let i = 0; i < sportProducts.length; i++) {
+    shoppingCart.push(sportProducts[i]);
+  };
+  console.log(shoppingCart);
+};
 
-function addProductsToCart () {
-  for (let i = 0; i < sportProducts.length; i++)
-  shoppingCart.push(sportProducts[i])
+function displayContentInCart () {
+  for (let i=0; i < shoppingCart.length; i++) {
+    const contentEl = document.getElementById("shoppingCart")
+    const productEl = document.createElement("div")
+    productEl.innerHTML=`
+    ${sportProducts[i].name}
+    ${sportProducts[i].price}
+    `
+  }
 }
+addToSCBtn = document.addEventListener("click", addProductsToCart)
