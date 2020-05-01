@@ -60,19 +60,19 @@
     </div>
 
     <script>
-
+      const shoppingCart = [];
       const phoneToCartEl = document.getElementById("addPhoneToCart");
       const nintendoToCartEl = document.getElementById("addNintendoToCart");
       const macbookToCartEl = document.getElementById("addMacbookToCart");
       const showShoppingCartEl = document.getElementById("showShoppingCart");
-      const totalPriceEl = document.getElementById("total");
+      const totalPriceEl = document.getElementById("totalPrice");
 
       function addIphoneToShoppingCart() {
         const product = {
           name: "Iphone",
           price: 900,
       }
-      shoppingCart.push(product)
+      shoppingCart.push(product);
       }
 
       function addNintendoToShoppingCart() {
@@ -80,7 +80,7 @@
           name: "Nintendo DS", 
           price: 1200,
       }
-      shoppingCart.push(product)
+      shoppingCart.push(product);
       }
 
       function addMacbookToShoppingCart() {
@@ -88,24 +88,26 @@
           name: "Mac Book Air",
           price: 3200,
         }
-        shoppingCart.push(product)
+        shoppingCart.push(product);
       };
       function showShoppingCartProducts() {
-        const shoppingCartContainer = document.getElementById("shoppingCart");
         for (let i=0; i < shoppingCart.length; i++) {
+          const shoppingCartContainer = document.getElementById("shoppingCart");
           const productContainer = document.createElement("div");
           productContainer.innerHTML = `
           ${shoppingCart[i].name}<br>
           ${shoppingCart[i].price}
           `;
-          shoppingCartContainer.appendChild(productContainer)
+          shoppingCartContainer.appendChild(productContainer);
+          shoppingCartContainer.innerHTML = ""
         }
       };
       function showTotalPrice() {
         let total = 0;
-        for (let i = 0; i < total.length; i++){
-          sum += total[i];
+        for (let i = 0; i < shoppingCart.length; i++){
+          total += shoppingCart[0].price;
         }
+        alert(total);
       };
 
       phoneToCartEl.addEventListener("click", addIphoneToShoppingCart);
