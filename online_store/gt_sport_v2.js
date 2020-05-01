@@ -67,7 +67,7 @@ const sportProducts = [
 ];
 function productDescriptionDisplay() {
   for (let i = 0; i < sportProducts.length; i++) {
-    descriptions = document.createElement("ul");
+    descriptions = document.createElement("div");
     const productDescription = document.getElementById("productDescription")
     descriptions.innerHTML = `
       <p> <b>${sportProducts[i].name}</b></p>
