@@ -91,15 +91,22 @@ function productDescriptionDisplay() {
 };
 productDescriptionDisplay();
 
-const btnEl = productEl.querySelector("button");
-btnEl.addEventListener('click', addProductsToCart);
-productListEl.appendChild(productEl);
+function addProductsToCart() {
+  for (let i = 0; i < sportProducts.length; i++) {
+    shoppingCart.push(sportProducts[i]);
+  };
+  console.log(shoppingCart);
+};
+
+const btnEl = document.createElement("button");
+btnEl.addEventListener('click', function () {
+  addProductsToCart(sportProducts[i]);
+});
 
 function displayContentInCart() {
   for (let i = 0; i < shoppingCart.length; i++) {
-    const contentEl = document.getElementById("shoppingCart")
-    productEl.innerHTML = "";
-    const productEl = document.createElement("div")
+    const contentEl = document.getElementById("shoppingCart");
+    const productEl = document.createElement("div");
     productEl.innerHTML = `
     ${sportProducts[i].name}
     ${sportProducts[i].price}
@@ -110,13 +117,13 @@ function displayContentInCart() {
 displayContentInCart();
 
 function calculateTotalPrice() {
-  let totalPrice=0;
-  for (let i=0; i < shoppingCart.length; i++){
+  let totalPrice = 0;
+  for (let i = 0; i < shoppingCart.length; i++) {
     totalPrice += shoppingCart[i].price;
   };
   alert(totalPrice);
 };
 
-shoppingCartEl.addEventListener(displayContentInCart);
+shoppingCartEl.addEventListener("click", displayContentInCart);
 totalPriceEl.addEventListener("click", calculateTotalPrice);
 
