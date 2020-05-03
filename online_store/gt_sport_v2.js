@@ -71,11 +71,16 @@ let productEl = [];
 const sportProductsEl = document.getElementById("sportProducts");
 const addToShoppingCartEl = document.getElementById("addToShoppingCart");
 let totalPriceEl = document.getElementById("totalPrice");
-let shoppingCartEl = document.getElementById("shoppingCart")
+let shoppingCartEl = document.getElementById("shoppingCart");
+let intoSCbtn = document.getElementById("intoSC");
+let calTPbtn = document.getElementById("calTP");
+let addToShoppingCartBtn = document.getElementById("addToShoppingCartBtn");
+let descriptions = [];
 
 function productDescriptionDisplay() {
   for (let i = 0; i < sportProducts.length; i++) {
     descriptions = document.createElement("div");
+    const btnEl = document.createElement("button");
     const product = sportProducts[i];
     descriptions.innerHTML = `
       <p> <b>${sportProducts[i].name}</b></p>
@@ -87,21 +92,22 @@ function productDescriptionDisplay() {
       <p> <button type="button" id="addToShoppingCartBtn">Add to Shopping Cart</button>
       `;
     productDescription.appendChild(descriptions);
-  };
-};
+  }
+}
 productDescriptionDisplay();
 
 function addProductsToCart() {
-  for (let i = 0; i < sportProducts.length; i++) {
-    shoppingCart.push(sportProducts[i]);
-  };
+  shoppingCart.push(sportProducts[i]);
+  let i = 0; i < sportProducts.length;
   console.log(shoppingCart);
-};
+}
 
-const btnEl = document.createElement("button");
-btnEl.addEventListener('click', function () {
+addToShoppingCartBtn.addEventListener("click", addProductsToCart);
+
+/* addToShoppingCartBtn.addEventListener("click", function () {
   addProductsToCart(sportProducts[i]);
-});
+  let i = 0; i < sportProducts.length;
+}); */
 
 function displayContentInCart() {
   for (let i = 0; i < shoppingCart.length; i++) {
@@ -112,18 +118,17 @@ function displayContentInCart() {
     ${sportProducts[i].price}
     `;
     contentEl.appendChild(productEl);
-  };
-};
-displayContentInCart();
+  }
+}
 
 function calculateTotalPrice() {
   let totalPrice = 0;
   for (let i = 0; i < shoppingCart.length; i++) {
     totalPrice += shoppingCart[i].price;
-  };
+  }
   alert(totalPrice);
-};
+}
 
-shoppingCartEl.addEventListener("click", displayContentInCart);
-totalPriceEl.addEventListener("click", calculateTotalPrice);
+intoSCbtn.addEventListener("click", displayContentInCart);
+calTPbtn.addEventListener("click", calculateTotalPrice);
 
