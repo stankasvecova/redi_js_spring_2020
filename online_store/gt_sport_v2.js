@@ -70,7 +70,7 @@ let shoppingCart = [];
 let productEl = [];
 const sportProductsEl = document.getElementById("sportProducts");
 const addToShoppingCartEl = document.getElementById("addToShoppingCart");
-let totalPriceEl = document.getElementById("totalPrice");
+let totalPriceEl = document.getElementById("totalPrice").value;
 let shoppingCartEl = document.getElementById("shoppingCart");
 let intoSCbtn = document.getElementById("intoSC");
 let calTPbtn = document.getElementById("calTP");
@@ -89,20 +89,23 @@ function productDescriptionDisplay() {
       <p> <b>Price:</b> ${sportProducts[i].price} Eur</p>
       <p> Sold by a <b>gT partner</b> called ${sportProducts[i].seller}.</p>
       <p> This ${sportProducts[i].name} is suitable for teenagers on ${sportProducts[i].level} level.
-      <p> <button type="button" id="addToShoppingCartBtn">Add to Shopping Cart</button>
       `;
-    productDescription.appendChild(descriptions);
+
+      const addToShoppingCartBtn = document.createElement("button");
+      addToShoppingCartBtn.textContent = "Add to shopping Cart";
+      addToShoppingCartBtn.addEventListener("click", addProductsToCart);
+      descriptions.appendChild(addToShoppingCartBtn);
+      productDescription.appendChild(descriptions);
   }
 }
 productDescriptionDisplay();
 
-function addProductsToCart() {
-  shoppingCart.push(sportProducts[i]);
-  let i = 0; i < sportProducts.length;
+function addProductsToCart(product) {
+  shoppingCart.push(product);
   console.log(shoppingCart);
 }
 
-addToShoppingCartBtn.addEventListener("click", addProductsToCart);
+
 
 /* addToShoppingCartBtn.addEventListener("click", function () {
   addProductsToCart(sportProducts[i]);
@@ -111,11 +114,11 @@ addToShoppingCartBtn.addEventListener("click", addProductsToCart);
 
 function displayContentInCart() {
   for (let i = 0; i < shoppingCart.length; i++) {
-    const contentEl = document.getElementById("shoppingCart");
-    const productEl = document.createElement("div");
+    descriptions = document.createElement("div")
+    const btnEl = document.createElement("button");
     productEl.innerHTML = `
-    ${sportProducts[i].name}
-    ${sportProducts[i].price}
+    ${sportProducts[i].name}:
+    ${sportProducts[i].price} Eur
     `;
     contentEl.appendChild(productEl);
   }
@@ -125,6 +128,8 @@ function calculateTotalPrice() {
   let totalPrice = 0;
   for (let i = 0; i < shoppingCart.length; i++) {
     totalPrice += shoppingCart[i].price;
+    totalPrice.innerHTML = `
+    Total price to pay is ${totalPrice}`
   }
   alert(totalPrice);
 }
