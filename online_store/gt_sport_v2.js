@@ -110,12 +110,13 @@ function addProductsToCart(product) {
 
 function displayContentInCart() {
   for (let i = 0; i < shoppingCart.length; i++) {
-    const productsToDisplay = document.createElement("div");
+    let shoppingCartEl = document.createElement("div");
     intoSCbtn.addEventListener("click", function () {
-      productsToDisplay.innerHTML = `
+      shoppingCartEl.innerHTML = `
       ${sportProducts[i].name}:
       ${sportProducts[i].price} Eur
-      `
+      `; 
+      shoppingCart.appendChild(shoppingCartEl);
     });
 
 
@@ -134,10 +135,9 @@ function calculateTotalPrice() {
   let totalPrice = 0;
   for (let i = 0; i < shoppingCart.length; i++) {
     totalPrice += shoppingCart[i].price;
-    totalPrice.innerHTML = `
-    Total price to pay is ${totalPrice}`
+    totalPriceEl.innerHTML = `
+    Total price to pay is ${totalPrice}`;
   }
-  alert(totalPrice);
 }
 
 intoSCbtn.addEventListener("click", displayContentInCart);
