@@ -72,10 +72,10 @@ const sportProductsEl = document.getElementById("sportProducts");
 const addToShoppingCartEl = document.getElementById("addToShoppingCart");
 let totalPriceEl = document.getElementById("totalPrice").value;
 let shoppingCartEl = document.getElementById("shoppingCart");
-let intoSCbtn = document.getElementById("intoSC");
 let calTPbtn = document.getElementById("calTP");
 let addToShoppingCartBtn = document.getElementById("addToShoppingCartBtn");
 let descriptions = [];
+let intoSCbtn = document.getElementById("intoSC");
 
 function productDescriptionDisplay() {
   for (let i = 0; i < sportProducts.length; i++) {
@@ -83,44 +83,50 @@ function productDescriptionDisplay() {
     const btnEl = document.createElement("button");
     const product = sportProducts[i];
     descriptions.innerHTML = `
-      <p> <b>${sportProducts[i].name}</b></p>
-      <p> <img src='${sportProducts[i].imgSrc}' style="width:50px"><p>
-      <p> <b>Brand:</b> ${sportProducts[i].brand}</p>
-      <p> <b>Price:</b> ${sportProducts[i].price} Eur</p>
-      <p> Sold by a <b>gT partner</b> called ${sportProducts[i].seller}.</p>
-      <p> This ${sportProducts[i].name} is suitable for teenagers on ${sportProducts[i].level} level.
-      `;
-
-      const addToShoppingCartBtn = document.createElement("button");
-      addToShoppingCartBtn.textContent = "Add to shopping Cart";
-      addToShoppingCartBtn.addEventListener("click", addProductsToCart);
-      descriptions.appendChild(addToShoppingCartBtn);
-      productDescription.appendChild(descriptions);
+  <p> <b>${sportProducts[i].name}</b></p>
+  <p> <img src='${sportProducts[i].imgSrc}' style="width:50px"><p>
+  <p> <b>Brand:</b> ${sportProducts[i].brand}</p>
+  <p> <b>Price:</b> ${sportProducts[i].price} Eur</p>
+  <p> Sold by a <b>gT partner</b> called ${sportProducts[i].seller}.</p>
+  <p> This ${sportProducts[i].name} is suitable for teenagers on ${sportProducts[i].level} level.</p>
+  `;
+    const addToShoppingCartBtn = document.createElement('button');
+    addToShoppingCartBtn.textContent = 'Add to shopping cart';
+    addToShoppingCartBtn.addEventListener('click', function () {
+      const shoppingCartProduct = document.createElement("product");
+      document.getElementById("shoppingCart").appendChild(shoppingCartProduct);
+      alert ("Your selected product was added");
+    });
+    descriptions.appendChild(addToShoppingCartBtn);
+    productDescription.appendChild(descriptions);
   }
-}
+};
+
 productDescriptionDisplay();
 
 function addProductsToCart(product) {
   shoppingCart.push(product);
-  console.log(shoppingCart);
-}
-
-
-
-/* addToShoppingCartBtn.addEventListener("click", function () {
-  addProductsToCart(sportProducts[i]);
-  let i = 0; i < sportProducts.length;
-}); */
+};
 
 function displayContentInCart() {
   for (let i = 0; i < shoppingCart.length; i++) {
-    descriptions = document.createElement("div")
+    const productsToDisplay = document.createElement("div");
+    intoSCbtn.addEventListener("click", function () {
+      productsToDisplay.innerHTML = `
+      ${sportProducts[i].name}:
+      ${sportProducts[i].price} Eur
+      `
+    });
+
+
+    /* descriptions = document.createElement("div")
     const btnEl = document.createElement("button");
     productEl.innerHTML = `
     ${sportProducts[i].name}:
     ${sportProducts[i].price} Eur
     `;
-    contentEl.appendChild(productEl);
+    contentEl.appendChild(productEl);*/
+
   }
 }
 
