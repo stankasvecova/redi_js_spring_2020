@@ -10,7 +10,8 @@ const sportProducts = [
       helmetNeeded: true,
       longevity: "mid-term",
       teamSpirit: false,
-    }
+    },
+    availability: 1,
   },
   {
     imgSrc: "standuppaddle.jpg",
@@ -23,7 +24,8 @@ const sportProducts = [
       helmetNeeded: false,
       longevity: "long-term",
       teamSpirit: true,
-    }
+    },
+    availability: 10,
   },
   {
     imgSrc: "volleyball.jpg",
@@ -36,7 +38,8 @@ const sportProducts = [
       helmetNeeded: false,
       longevity: "short-term",
       teamSpirit: true,
-    }
+    },
+    availability: 3,
   },
   {
     imgSrc: "xbadmintonset.jpg",
@@ -49,7 +52,8 @@ const sportProducts = [
       helmetNeeded: false,
       longevity: "mid-term",
       teamSpirit: true,
-    }
+    },
+    availability: 5,
   },
   {
     imgSrc: "skigoggles.jpg",
@@ -62,7 +66,8 @@ const sportProducts = [
       helmetNeeded: true,
       longevity: "mid-term",
       teamSpirit: true,
-    }
+    },
+    availability: 7,
   },
 ];
 const productDescription = document.getElementById("productDescription");
@@ -82,20 +87,58 @@ function productDescriptionDisplay() {
     descriptions = document.createElement("div");
     const btnEl = document.createElement("button");
     const product = sportProducts[i];
-    descriptions.innerHTML = `
-  <p> <b>${sportProducts[i].name}</b></p>
-  <p> <img src='${sportProducts[i].imgSrc}' style="width:50px"><p>
-  <p> <b>Brand:</b> ${sportProducts[i].brand}</p>
-  <p> <b>Price:</b> ${sportProducts[i].price} Eur</p>
-  <p> Sold by a <b>gT partner</b> called ${sportProducts[i].seller}.</p>
-  <p> This ${sportProducts[i].name} is suitable for teenagers on ${sportProducts[i].level} level.</p>
-  `;
+
+    if (sportProducts[i].availability < 1) {
+      descriptions.innerHTML = `
+      <p> <b>${sportProducts[i].name}</b></p>
+      <p> <img src='${sportProducts[i].imgSrc}' style="width:50px"><p>
+      <p> <b>Brand:</b> ${sportProducts[i].brand}</p>
+      <p> <b>Price:</b> ${sportProducts[i].price} Eur</p>
+      <p> Sold by a <b>gT partner</b> called ${sportProducts[i].seller}.</p>
+      <p> This ${sportProducts[i].name} is suitable for teenagers on ${sportProducts[i].level} level.</p>
+      <p> This product is currently out of stock / not available. </p>
+      `;
+    }
+    else if (sportProducts[i].availability === 1) {
+      descriptions.innerHTML = `
+      <p> <b>${sportProducts[i].name}</b></p>
+      <p> <img src='${sportProducts[i].imgSrc}' style="width:50px"><p>
+      <p> <b>Brand:</b> ${sportProducts[i].brand}</p>
+      <p> <b>Price:</b> ${sportProducts[i].price} Eur</p>
+      <p> Sold by a <b>gT partner</b> called ${sportProducts[i].seller}.</p>
+      <p> This ${sportProducts[i].name} is suitable for teenagers on ${sportProducts[i].level} level.</p>
+      <p> Last chance! Only 1 more left in stock! </p>
+      `;
+    }
+    else if (sportProducts[i].availability > 1 && sportProducts[i].availability <= 3) {
+      descriptions.innerHTML = `
+      <p> <b>${sportProducts[i].name}</b></p>
+      <p> <img src='${sportProducts[i].imgSrc}' style="width:50px"><p>
+      <p> <b>Brand:</b> ${sportProducts[i].brand}</p>
+      <p> <b>Price:</b> ${sportProducts[i].price} Eur</p>
+      <p> Sold by a <b>gT partner</b> called ${sportProducts[i].seller}.</p>
+      <p> This ${sportProducts[i].name} is suitable for teenagers on ${sportProducts[i].level} level.</p>
+      <p> We have only ${sportProducts[i].availability} pieces left. Hurry! </p>
+      `;
+    }
+    else {
+      descriptions.innerHTML = `
+      <p> <b>${sportProducts[i].name}</b></p>
+      <p> <img src='${sportProducts[i].imgSrc}' style="width:50px"><p>
+      <p> <b>Brand:</b> ${sportProducts[i].brand}</p>
+      <p> <b>Price:</b> ${sportProducts[i].price} Eur</p>
+      <p> Sold by a <b>gT partner</b> called ${sportProducts[i].seller}.</p>
+      <p> This ${sportProducts[i].name} is suitable for teenagers on ${sportProducts[i].level} level.</p>
+      <p> This product is currently available, ${sportProducts[i].availability} pieces in stock. </p>
+      `;
+    }
+  
     const addToShoppingCartBtn = document.createElement('button');
     addToShoppingCartBtn.textContent = 'Add to shopping cart';
     addToShoppingCartBtn.addEventListener('click', function () {
       const shoppingCartProduct = document.createElement("product");
       document.getElementById("shoppingCart").appendChild(shoppingCartProduct);
-      alert ("Your selected product was added");
+      alert("Your selected product was added");
     });
     descriptions.appendChild(addToShoppingCartBtn);
     productDescription.appendChild(descriptions);
@@ -115,19 +158,9 @@ function displayContentInCart() {
       shoppingCartEl.innerHTML = `
       ${sportProducts[i].name}:
       ${sportProducts[i].price} Eur
-      `; 
+      `;
       shoppingCart.appendChild(shoppingCartEl);
     });
-
-
-    /* descriptions = document.createElement("div")
-    const btnEl = document.createElement("button");
-    productEl.innerHTML = `
-    ${sportProducts[i].name}:
-    ${sportProducts[i].price} Eur
-    `;
-    contentEl.appendChild(productEl);*/
-
   }
 }
 
