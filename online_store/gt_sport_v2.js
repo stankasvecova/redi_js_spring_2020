@@ -75,7 +75,7 @@ let shoppingCart = [];
 let productEl = [];
 const sportProductsEl = document.getElementById("sportProducts");
 const addToShoppingCartEl = document.getElementById("addToShoppingCart");
-let totalPriceEl = document.getElementById("totalPrice").value;
+let totalPriceEl = document.getElementById("totalPrice");
 let shoppingCartEl = document.getElementById("shoppingCart");
 let calTPbtn = document.getElementById("calTP");
 let addToShoppingCartBtn = document.getElementById("addToShoppingCartBtn");
@@ -136,12 +136,13 @@ function productDescriptionDisplay() {
     const addToShoppingCartBtn = document.createElement('button');
     addToShoppingCartBtn.textContent = 'Add to shopping cart';
     addToShoppingCartBtn.addEventListener('click', function () {
-      const shoppingCartProduct = document.createElement("product");
-      document.getElementById("shoppingCart").appendChild(shoppingCartProduct);
-      alert("Your selected product was added");
+      shoppingCart.push(product);
+      console.log(shoppingCart);
+      addToShoppingCartBtn.setAttribute("disabled", "true");
     });
     descriptions.appendChild(addToShoppingCartBtn);
     productDescription.appendChild(descriptions);
+    
     if (sportProducts[i].availability ===0) {
       addToShoppingCartBtn.setAttribute("disabled", "true")
     }
@@ -156,13 +157,13 @@ function addProductsToCart(product) {
 
 function displayContentInCart() {
   for (let i = 0; i < shoppingCart.length; i++) {
-    let shoppingCartEl = document.createElement("div");
+    let cartList = document.createElement("div");
     intoSCbtn.addEventListener("click", function () {
-      shoppingCartEl.innerHTML = `
-      ${sportProducts[i].name}:
-      ${sportProducts[i].price} Eur
+      cartList.innerHTML = `
+      ${shoppingCart.name}:
+      ${shoppingCart.price} Eur
       `;
-      shoppingCart.appendChild(shoppingCartEl);
+      shoppingCartEl.appendChild(cartList);
     });
   }
 }
