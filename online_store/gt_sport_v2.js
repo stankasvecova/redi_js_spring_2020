@@ -142,6 +142,9 @@ function productDescriptionDisplay() {
     });
     descriptions.appendChild(addToShoppingCartBtn);
     productDescription.appendChild(descriptions);
+    if (sportProducts[i].availability ===0) {
+      addToShoppingCartBtn.setAttribute("disabled", "true")
+    }
   }
 };
 
