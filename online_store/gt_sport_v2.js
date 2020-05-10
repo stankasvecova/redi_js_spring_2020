@@ -158,13 +158,10 @@ function addProductsToCart(product) {
 function displayContentInCart() {
   for (let i = 0; i < shoppingCart.length; i++) {
     let cartList = document.createElement("div");
-    intoSCbtn.addEventListener("click", function () {
-      cartList.innerHTML = `
-      ${shoppingCart.name}:
-      ${shoppingCart.price} Eur
-      `;
-      shoppingCartEl.appendChild(cartList);
-    });
+    cartList.innerHTML = `
+    ${shoppingCart.name}: ${shoppingCart.price} Eur
+    `;
+    shoppingCartEl.appendChild(cartList);
   }
 }
 
