@@ -1,0 +1,80 @@
+.sportTitle1 {
+  color: black;
+  background-color: yellowgreen;
+  width: 100px;
+  height: 50px;
+  margin: 1px;
+  border-radius: 1em 1px;
+  padding: 1em;
+  text-align: center;
+}
+.sportTitle2 {
+  color:yellowgreen;
+  background-color: black;
+  width: 100px;
+  height: 50px;
+  margin: 1px;
+  border-radius: 1em 1px;
+  padding: 1em;
+}
+.header1 {
+  display: flex;
+  margin: 2em;
+}
+.header2 {
+  display: flex;
+  margin: 2px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr; 
+  grid-gap: 1em;
+  border-radius: 1em;
+}
+.grid > div:nth-child(odd){
+  background-color: lightgray;
+  padding: 1em;
+  border-radius: 1em;
+}
+.grid > div:nth-child(even){
+  background-color: #eee;
+  padding: 1em;
+  border-radius: 1em;
+}
+.total {
+  text-align: center;
+  color: black;
+  background-color: yellowgreen;
+  font-weight: bolder;
+  border: dotted;
+  border-color: black;
+  border-radius: 1em 1px;
+  padding: 1em;
+  margin: 2em;
+  width: 100px;
+  height: 50px;
+}
+.filledStars {
+  position: relative;
+  display: inline-block
+}
+.emptyStars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+}
+.filledStars::before {
+  content: "\f005 \f005 \f005 \f005 \f005";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: white;
+}
+.emptyStars::before {
+  content: "\f005 \f005 \f005 \f005 \f005";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  columns: yellow;
+}
