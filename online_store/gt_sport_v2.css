@@ -1,5 +1,5 @@
 .sportTitle1 {
-  color: black;
+  color: #000000;
   background-color: yellowgreen;
   width: 100px;
   height: 50px;
@@ -9,7 +9,7 @@
   text-align: center;
 }
 .sportTitle2 {
-  color:yellowgreen;
+  color:#9acd32;
   background-color: black;
   width: 100px;
   height: 50px;
@@ -29,6 +29,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr; 
   grid-gap: 1em;
+  font-size: smaller;
   border-radius: 1em;
 }
 .grid > div:nth-child(odd){

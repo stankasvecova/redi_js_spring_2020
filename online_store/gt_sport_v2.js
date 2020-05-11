@@ -1,6 +1,6 @@
 const sportProducts = [
   {
-    imgSrc: "skateboard.jpg",
+    imgSrc: "skateboard3.png",
     name: "Skateboard",
     brand: "Hudora",
     level: "beginner",
@@ -15,7 +15,7 @@ const sportProducts = [
     rating: 3,
   },
   {
-    imgSrc: "standuppaddle.jpg",
+    imgSrc: "standuppaddle.png",
     name: "Stand-up paddle",
     brand: "Oceana",
     level: "advanced",
@@ -30,7 +30,7 @@ const sportProducts = [
     rating: 5,
   },
   {
-    imgSrc: "volleyball.jpg",
+    imgSrc: "volleyball.png",
     name: "Volleyball ball",
     brand: "Mikasa",
     level: "beginner",
@@ -45,7 +45,7 @@ const sportProducts = [
     rating: 4,
   },
   {
-    imgSrc: "xbadmintonset.jpg",
+    imgSrc: "badmintonset.png",
     name: "Badminton set",
     brand: "Talbot Torro",
     level: "intermediate",
@@ -60,7 +60,7 @@ const sportProducts = [
     rating: 3,
   },
   {
-    imgSrc: "skigoggles.jpg",
+    imgSrc: "skigoggles.png",
     name: "Ski Goggles",
     brand: "Lemego",
     level: "intermediate",
@@ -95,8 +95,8 @@ function productDescriptionDisplay() {
     const product = sportProducts[i];
 
     descriptions.innerHTML = `
-      <p> <b>${product.name}</b></p>
-      <p> <img src='${product.imgSrc}' style="width:50px"><p>
+      <p> <h3><b>${product.name}</b></h3></p>
+      <p> <img src='${product.imgSrc}' style="width:90px"><p>
       <p> <b>Brand:</b> ${product.brand}</p>
       <p> <b>Price:</b> ${product.price} Eur</p>
       <p> Sold by a <b>gT partner</b> called ${product.seller}.</p>
@@ -116,6 +116,10 @@ function productDescriptionDisplay() {
 
     const addToShoppingCartBtn = document.createElement('button');
     addToShoppingCartBtn.textContent = 'Add to shopping cart';
+    addToShoppingCartBtn.style.backgroundColor = "#9acd32";
+    addToShoppingCartBtn.style.width = "150px";
+    addToShoppingCartBtn.style.height = "30px";
+    addToShoppingCartBtn.style.borderRadius = "1em";
     addToShoppingCartBtn.addEventListener('click', function () {
       shoppingCart.push(product);
       console.log(shoppingCart);
