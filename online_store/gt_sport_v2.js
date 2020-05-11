@@ -137,6 +137,7 @@ function addProductsToCart(product) {
 };
 
 function displayContentInCart() {
+  shoppingCartEl.innerHTML = "";
   for (let i = 0; i < shoppingCart.length; i++) {
     let cartItemEl = document.createElement("div");
     const product = shoppingCart[i];
