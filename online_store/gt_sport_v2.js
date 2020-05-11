@@ -165,10 +165,10 @@ function getRatings (rating) {
   const emptyStars = maxStars - rating;
   //return "Rating:  ★ ☆ ☆ ☆ ☆";
   let starText = "";
-  for (let i=0; i < rating; i++) {
+  for (let i = 0; i < rating; i++) {
     starText += "★";
   };
-  for (let i=0; i < emptyStars; i++){
+  for (let i = 0; i < emptyStars; i++){
     starText += "☆"; 
   }
   return `Rating: ${starText}`;
