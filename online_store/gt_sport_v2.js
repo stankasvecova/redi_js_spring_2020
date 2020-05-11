@@ -152,7 +152,7 @@ function calculateTotalPrice() {
   for (let i = 0; i < shoppingCart.length; i++) {
     totalPrice += shoppingCart[i].price;
     totalPriceEl.innerHTML = `
-    Total price to pay is ${totalPrice}`;
+    Total price to pay is ${totalPrice} Eur`;
   }
 }
 
