@@ -42,7 +42,7 @@
   padding: 1em;
   border-radius: 1em;
 }
-.total {
+.total1 {
   text-align: center;
   color: black;
   background-color: yellowgreen;
@@ -51,31 +51,26 @@
   border-color: black;
   border-radius: 1em 1px;
   padding: 1em;
-  margin: 2em;
+  margin: 1px 1px 1px 300px;
   width: 100px;
   height: 50px;
 }
-.filledStars {
-  position: relative;
-  display: inline-block
+.total2 {
+  text-align: center;
+  color: black;
+  background-color: yellowgreen;
+  font-weight: bolder;
+  border: dotted;
+  border-color: black;
+  border-radius: 1em 1px;
+  padding: 1em;
+  margin: 2px;
+  width: 100px;
+  height: 50px;
 }
-.emptyStars {
-  position: absolute;
-  top: 0;
-  left: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  width: 0;
+.inverted-color {
+  background-color: lightslategrey;
 }
-.filledStars::before {
-  content: "\f005 \f005 \f005 \f005 \f005";
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  color: white;
-}
-.emptyStars::before {
-  content: "\f005 \f005 \f005 \f005 \f005";
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  columns: yellow;
+.main {
+  background-color: beige;
 }

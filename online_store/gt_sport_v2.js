@@ -150,7 +150,7 @@ function displayContentInCart() {
     `;
     shoppingCartEl.appendChild(cartItemEl);
   }
-}
+};
 
 function calculateTotalPrice() {
   let totalPrice = 0;
@@ -159,10 +159,27 @@ function calculateTotalPrice() {
     totalPriceEl.innerHTML = `
     Total price to pay is ${totalPrice} Eur`;
   }
-}
+};
+
+function mouseOverHandler(){
+  intoSCbtn.classList.add("inverted-color");
+};
+function mouseLeaveHandler(){
+  intoSCbtn.classList.remove("inverted-color");
+};
+function mouseOverHandler2(){
+  calTPbtn.classList.add("inverted-color");
+};
+function mouseLeaveHandler2(){
+  calTPbtn.classList.remove("inverted-color");
+};
 
 intoSCbtn.addEventListener("click", displayContentInCart);
 calTPbtn.addEventListener("click", calculateTotalPrice);
+intoSCbtn.addEventListener("mouseover", mouseOverHandler);
+intoSCbtn.addEventListener("mouseleave", mouseLeaveHandler);
+calTPbtn.addEventListener("mouseover", mouseOverHandler2);
+calTPbtn.addEventListener("mouseleave", mouseLeaveHandler2);
 
 function getRatings (rating) {
   const maxStars = 5;
@@ -176,4 +193,6 @@ function getRatings (rating) {
     starText += "☆"; 
   }
   return `Rating: ${starText}`;
-}
+};
+
+
