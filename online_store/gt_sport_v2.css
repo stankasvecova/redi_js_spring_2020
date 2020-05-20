@@ -71,6 +71,14 @@
 .inverted-color {
   background-color: lightslategrey;
 }
-.main {
-  background-color: beige;
+.grid > div:hover {
+  background-color: yellowgreen;
+}
+h2.sportTitle1:hover {
+  background-color: black;
+  color: yellowgreen
+}
+h2.sportTitle2:hover {
+  background-color: yellowgreen;
+  color: black
 }
